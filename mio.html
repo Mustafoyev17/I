@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MIO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./mio.css">
+    <link rel="stylesheet" href="./mio.mjs">
+    <link rel="stylesheet" href="./mio.sass">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <img style="width: 10%;" src="data:image/png;base64,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">
+          <a class="navbar-brand" href="#">MIO Comunity</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="https://www.google.com/search?q=MIO+technology&sca_esv=e99de710a118b989&sxsrf=ACQVn09X2SsHHu95kH5krhjeXdgrWoLPGw%3A1714469940360&ei=NLwwZsLHFYj-wPAPsYGS4AU&udm=&ved=0ahUKEwjCsZee0umFAxUIPxAIHbGABFwQ4dUDCBA&uact=5&oq=MIO+technology&gs_lp=Egxnd3Mtd2l6LXNlcnAiDk1JTyB0ZWNobm9sb2d5MgYQABgHGB4yBhAAGAcYHjIGEAAYBxgeMgYQABgHGB4yCBAAGAcYChgeMgYQABgHGB4yCBAAGAcYChgeMgYQABgHGB4yCBAAGAcYChgeMgoQABgHGAoYHhgPSPUNUABY3wZwAHgBkAEAmAHVAaAB2gSqAQUwLjEuMrgBA8gBAPgBAZgCA6ACgQXCAgYQLhgHGB7CAgwQLhjRAxgHGMcBGB7CAhUQLhgHGB4YlwUY3AQY3gQY4ATYAQHCAhsQLhjRAxgHGMcBGB4YlwUY3AQY3gQY4ATYAQGYAwC6BgYIARABGBSSBwUwLjEuMqAHkTA&sclient=gws-wiz-serp">Home</a>
+              </li>
+              <li class="nav-item" >
+                <a class="nav-link"  href="https://www.mio.com/ru/">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Corporation
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="https://www.mio.com/ru/products/dash-cameras/car-cameras/9-series">DVR Camera</a></li>
+                  <li><a class="dropdown-item" href="https://www.mio.com/ru/products/dash-cameras/car-cameras/viva-series">ViVa series</a></li>
+                  <li><a class="dropdown-item" href="https://www.mio.com/ru/products/dash-cameras/car-cameras/a-series">A series</a></li>
+                  <li><a class="dropdown-item" href="https://www.mio.com/ru/products/dash-cameras/car-cameras/dvuhkanal-nye">SVD series</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="https://www.mio.com/ru/products/dash-cameras/car-cameras/8-series">Other devices</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true" href="https://www.google.com/search?q=MIO+technology&sca_esv=e99de710a118b989&sxsrf=ACQVn09X2SsHHu95kH5krhjeXdgrWoLPGw%3A1714469940360&ei=NLwwZsLHFYj-wPAPsYGS4AU&udm=&ved=0ahUKEwjCsZee0umFAxUIPxAIHbGABFwQ4dUDCBA&uact=5&oq=MIO+technology&gs_lp=Egxnd3Mtd2l6LXNlcnAiDk1JTyB0ZWNobm9sb2d5MgYQABgHGB4yBhAAGAcYHjIGEAAYBxgeMgYQABgHGB4yCBAAGAcYChgeMgYQABgHGB4yCBAAGAcYChgeMgYQABgHGB4yCBAAGAcYChgeMgoQABgHGAoYHhgPSPUNUABY3wZwAHgBkAEAmAHVAaAB2gSqAQUwLjEuMrgBA8gBAPgBAZgCA6ACgQXCAgYQLhgHGB7CAgwQLhjRAxgHGMcBGB7CAhUQLhgHGB4YlwUY3AQY3gQY4ATYAQHCAhsQLhjRAxgHGMcBGB4YlwUY3AQY3gQY4ATYAQGYAwC6BgYIARABGBSSBwUwLjEuMqAHkTA&sclient=gws-wiz-serp">Disabled</a>
+              </li>
+            </ul>
+           
+          </div>
+        </div>
+      </nav>
+ <form class="d-flex" role="search" style="display: flex; justify-content: center; align-items: center;">
+              <input style="width: 50%;" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+      <div class="img"><img src="https://img.promportal.su/foto/good_fotos/51188/511889744/avtomobilniy-videoregistrator-xiaomi-70mai-dash-cam-4k-black-rear-cam-set-hdr_foto_largest.jpg" alt=""></div>
+      
+      <div class="collapse1"><h3>www.mio.com.ru</h3><p>
+        <p class="d-inline-flex gap-1">
+            <a class="btn btn-outline-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">One type of data</a>
+            <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Second type of data</button>
+            <button class="btn btn-outline-danger" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Both types of data</button>
+        </p>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample1">
+                <div class="card card-body">
+                  Video surveillance is a process carried out using optoelectronic devices designed for visual control or automatic image analysis.
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample2">
+                <div class="card card-body">
+                  ( CCT ) also known as video surveillance, [1] is the use of video cameras to transmit a signal to a specific location.
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Accordion Item 1
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>This is the first item's accordion body.</strong> At first, video cameras were large and expensive. Only professionals operated them. As the electronics industry advanced, and solid state circuits with transistors and microprocessors replaced vacuum tubes, video cameras became smaller and inexpensive.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Accordion Item 2
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>This is the second item's accordion body.</strong> Video cameras were invented early in the 20th century for television use, and by the end of the century, people could buy digital video cameras, which can almost immediately display the image. Video recorders that could record the image on magnetic tape were created in the middle 20th century.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Accordion Item 3
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>This is the third item's accordion body.</strong>A video camera is camera used to make electronic motion pictures. It captures moving images and synchronous sound. Early video cameras were all analog and most modern ones are digital. Analog video cameras produce signals that can be displayed with analog televisions. The signals can be shown at the time, or can be stored in an analog format on magnetic tape. Digital video cameras produce digital images.
+                  </div>
+                </div>
+              </div>
+            </div>      
+
+          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button>
+
+          <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Online trade in there</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+ 
+            <div class="dropdown mt-3">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Communications with us
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Enter news</a></li>
+                <li><a class="dropdown-item" href="#">Review</a></li>
+                <li><a class="dropdown-item" href="#">Submission of reports</a></li>
+              </ul>
+            </div>
+
+
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label" aria-placeholder="email">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label" aria-placeholder="password">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputNumber1" class="form-label" aria-placeholder="number">Phone number</label>
+                <input type="PhoneNumber" class="form-control" id="exampleInputNumber1" value="+998 ( ) - ">
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+          </div>
+
+
+
+        <div class="carousel1"><div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img  class="carousel" src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRP4i8JmzzNn7qVdK2RsihEirtmKhrb_ZGkVmfHs04t4qiUE2sc-McO3wvjcczfb9LC_5g4Fw7SNcQttHTVA2JIeDJMZ1c_-o8Dc5UNWY4NgpLkaqAHPK8ntyru4Aj4UCGOyGc8-m8&usqp=CAc">
+              </div>
+              <div class="carousel-item">
+                <img class="carousel"  src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTs3shF86HSZQ7IEtpOTraNy4w50_v36gvSpHw09U2-ZA4n7j_12XjyWU9pDcgT9AkXreAgP_xRWJTuIrpYSP976s-d9lw35bWcvFx41cE4WIwZlnfsIo418NLpzeuI_XG8TOwPeQ&usqp=CAc">
+              </div>
+              <div class="carousel-item">
+                <img class="carousel" src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcScsvizzN3AGsN1Fc2BNgdATlPWGdSOXa6kqtFc3nNEG34ln92CynPiOBat96OCyV909zRqL-wxX5oXDRA11kGv6O5z5L960Aa5h0ynQVCEncikE1AaFAbDCYay0Emvi6-zblByhA&usqp=CAc">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div></div>
+
+          
+
+
+
+
+
+  <div class="form">
+    <form class="row g-3 needs-validation" novalidate>
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label" >First name</label>
+        <input type="text" class="form-control" id="validationCustom01" required placeholder="name">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom02" class="form-label" >Last name</label>
+        <input type="text" class="form-control" id="validationCustom02"  required placeholder="surname">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustomUsername" class="form-label" aria-placeholder="email">Username</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
+          <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required placeholder="example@gmail.com">
+          <div class="invalid-feedback">
+            Please choose a username.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="validationCustom03" class="form-label">City</label>
+        <input type="text" class="form-control" id="validationCustom03" required placeholder="New-York">
+        <div class="invalid-feedback">
+          Please provide a valid city.
+        </div>
+      </div>
+      <div class="col-md-3">
+        <label for="validationCustom04" class="form-label">Online</label>
+        <select class="form-select" id="validationCustom04" required>
+          <option selected disabled value="">Choose:</option>
+          <option>Telegram</option>
+          <option>Instargram</option>
+          <option>Facebook</option>
+        </select>
+        <div class="invalid-feedback">
+          Please select a valid state.
+        </div>
+      </div>
+      <div class="#"></div>
+      
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+          <label class="form-check-label" for="invalidCheck">
+            Agree to terms and conditions
+          </label>
+          <div class="invalid-feedback">
+            You must agree before submitting.
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">Submit form</button>
+      </div>
+    </form></div>
+
+<h4>A video camera is camera used to make electronic motion pictures. It captures moving images and synchronous sound. Early video cameras were all analog and most modern ones are digital. Analog video cameras produce signals that can be displayed with analog televisions.</h4>
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark">
+    <li><a class="dropdown-item active" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+</div>
+
+<footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary">
+  <div class="container py-4 py-md-5 px-4 px-md-3 text-body-secondary">
+    <div class="row">
+      <div class="col-lg-3 mb-3">
+        <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" href="#" aria-label="Bootstrap">
+          <span class="fs-5">MIO Comunity</span>
+        </a>
+        <ul class="list-unstyled small">
+          <li class="mb-2">In 2006-2012, mio ​​company started its activities completely. Today, its products are leading in world markets.</li>
+          <li class="mb-2">All products are licensed. docs CC BY 3.0.</li>
+          <li class="mb-2">Online trading system version v5.3.3.</li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+        <h5>Links</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="#">Home</a></li>
+          <li class="mb-2"><a href="#">Docs</a></li>
+          <li class="mb-2"><a href="#">Examples</a></li>
+          <li class="mb-2"><a href="#">Icons</a></li>
+          <li class="mb-2"><a href="#">Themes</a></li>
+          <li class="mb-2"><a href="#">Blog</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">Swag Store</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2 mb-3">
+        <h5>Guides</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="#">Getting started</a></li>
+          <li class="mb-2"><a href="#">Starter template</a></li>
+          <li class="mb-2"><a href="#">Webpack</a></li>
+          <li class="mb-2"><a href="#">Parcel</a></li>
+          <li class="mb-2"><a href="#">Vite</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2 mb-3">
+        <h5>Projects</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">Bootstrap 5</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">Bootstrap 4</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">Icons</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">RFS</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">Examples repo</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2 mb-3">
+        <h5>Community</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">Issues</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">Discussions</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">Corporate sponsors</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">Open Collective</a></li>
+          <li class="mb-2"><a href="#" target="_blank" rel="noopener">Stack Overflow</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html> 
